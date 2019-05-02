@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>628</width>
+    <height>414</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="screen">
+   <widget class="QWidget" name="configWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>211</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>181</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="configLayout">
+      <item>
+       <layout class="QFormLayout" name="protocolLayout">
+        <item row="1" column="0">
+         <widget class="QLabel" name="protocolLabel">
+          <property name="text">
+           <string>Protocol:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QRadioButton" name="tcpSelect">
+          <property name="text">
+           <string>TCP</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QRadioButton" name="udpSelect">
+          <property name="text">
+           <string>UDP</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="commWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>601</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="horizontalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>601</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="commLayout">
+      <item>
+       <widget class="QWidget" name="clientWidget" native="true">
+        <widget class="QWidget" name="verticalLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>291</width>
+           <height>281</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="clientLayout">
+          <item>
+           <layout class="QHBoxLayout" name="portLayoutClient">
+            <item>
+             <widget class="QLabel" name="portLabelClient">
+              <property name="text">
+               <string>Port:                        </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="portClient"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="destinationLayout">
+            <item>
+             <widget class="QLabel" name="destinationLabel">
+              <property name="text">
+               <string>Destination port:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="destinationPort"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="ipLayout">
+            <item>
+             <widget class="QLabel" name="ipLabel">
+              <property name="text">
+               <string>Destination IP:     </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="destinationIp"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="clientMessage"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="clientSend">
+            <property name="text">
+             <string>Send</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <zorder>serverWidget</zorder>
+        <zorder>verticalLayoutWidget_2</zorder>
+        <zorder>verticalLayoutWidget_2</zorder>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="serverWidget" native="true">
+        <widget class="QWidget" name="verticalLayoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>-1</x>
+           <y>-1</y>
+           <width>301</width>
+           <height>281</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="serverLayout">
+          <item>
+           <layout class="QHBoxLayout" name="portLayoutServer">
+            <item>
+             <widget class="QLabel" name="portLabelServer">
+              <property name="text">
+               <string>Port:                        </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="portServer"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="serverTerminal"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="serverListen">
+            <property name="text">
+             <string>Listen</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <zorder>configWidget</zorder>
+   <zorder>verticalLayoutWidget_2</zorder>
+   <zorder>commWidget</zorder>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
