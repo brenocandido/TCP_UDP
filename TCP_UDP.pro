@@ -28,13 +28,17 @@ SOURCES += \
         mainwindow.cpp \
     udp.cpp \
     udp_server.cpp \
-    udp_client.cpp
+    udp_client.cpp \
+    tcp_server.cpp \
+    tcp_client.cpp
 
 HEADERS += \
         mainwindow.h \
     udp.h \
     udp_server.h \
-    udp_client.h
+    udp_client.h \
+    tcp_server.h \
+    tcp_client.h
 
 FORMS += \
         mainwindow.ui

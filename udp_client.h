@@ -9,13 +9,17 @@
 #include <chrono>
 #include "udp.h"
 
-class UDP_Client final: public UDP
+class UDP_Client: public UDP
 {
+    Q_OBJECT
 public:
     explicit UDP_Client(quint16 local_port, quint16 sending_port, QHostAddress sending_address = QHostAddress::LocalHost,
                         QString content = "Test", bool send_file = false, bool single_message = false, QObject *parent = nullptr);
     virtual ~UDP_Client();
     virtual void start() override;
+
+public slots:
+    void start_client();
 
 private:
     void send();

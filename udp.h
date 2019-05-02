@@ -17,6 +17,10 @@ public:
     virtual ~UDP() {}
     virtual void start() = 0;
 
+signals:
+    void message_received();
+
+
 protected:
     QUdpSocket *_socket;
     quint16 _port;

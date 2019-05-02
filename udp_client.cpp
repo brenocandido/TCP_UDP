@@ -8,8 +8,6 @@ UDP_Client::UDP_Client(quint16 port, quint16 sending_port, QHostAddress sending_
     _content = content;
     _send_file = send_file;
     _single_message = single_message;
-
-    start();
 }
 
 UDP_Client::~UDP_Client()
@@ -30,6 +28,11 @@ void UDP_Client::start()
         send();
         std::this_thread::sleep_for(std::chrono::milliseconds(200));
     } while(!_single_message);
+}
+
+void UDP_Client::start_client()
+{
+    start();
 }
 
 void UDP_Client::send()
