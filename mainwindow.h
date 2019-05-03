@@ -5,6 +5,7 @@
 #include <QHostAddress>
 #include <QThread>
 #include <QDebug>
+#include <QMessageBox>
 #include "udp_client.h"
 #include "udp_server.h"
 #include "tcp_client.h"
@@ -36,6 +37,13 @@ public slots:
     void serverListen();
 
     void serverMessageReceived();
+private slots:
+    void on_aboutButton_clicked();
+
+    void on_helpButton_clicked();
+
+    void on_pushButton_clicked();
+
 private:
 
     Ui::MainWindow *ui;

@@ -6,6 +6,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->udpSelect->setChecked(true);
+    _protocol = UDP;
 
     setupConnections();
 }
@@ -95,6 +97,7 @@ void MainWindow::serverListen()
     else{
         qDebug() << "No protocol selected";
     }
+        ui->configWidget->setDisabled(true);
 }
 
 void MainWindow::serverMessageReceived()
@@ -107,4 +110,30 @@ void MainWindow::serverMessageReceived()
     {
         ui->serverTerminal->setText(QString(_tcp_server->getData()));
     }
+}
+
+void MainWindow::on_aboutButton_clicked()
+{
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("About");
+    msgBox.setText(QString::fromUtf8("Trabalho para a matéria de Redes de Comunicação de Dados\n"
+                   "Universidade Federal de Santa Catarina\u2122\n"
+                   "Breno Candido Conrado\u00A9"));
+    msgBox.setStandardButtons(QMessageBox::Ok);
+    msgBox.exec();
+}
+
+void MainWindow::on_helpButton_clicked()
+{
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Help");
+    msgBox.setText( "1 - Select your desired protocol\n"
+                    "2 - Send as the client, on the left side\n"
+                    "3 - Receive as the server, on the right side"
+                    "4 - Setup your client by inputting local port, destination port e destination IP.\n"
+                    "5 - The message to be sent can be written in the text box.\n"
+                    "6 - To setup the server, just input the desired port.\n");
+    msgBox.setStandardButtons(QMessageBox::Ok);
+    msgBox.setButtonText(QMessageBox::Ok, "Thanks! That's very helpful!");
+    msgBox.exec();
 }

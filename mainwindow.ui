@@ -11,70 +11,23 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>UDP/TCP COM</string>
   </property>
   <widget class="QWidget" name="screen">
-   <widget class="QWidget" name="configWidget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>211</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <widget class="QWidget" name="verticalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>181</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="configLayout">
-      <item>
-       <layout class="QFormLayout" name="protocolLayout">
-        <item row="1" column="0">
-         <widget class="QLabel" name="protocolLabel">
-          <property name="text">
-           <string>Protocol:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QRadioButton" name="tcpSelect">
-          <property name="text">
-           <string>TCP</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QRadioButton" name="udpSelect">
-          <property name="text">
-           <string>UDP</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </widget>
    <widget class="QWidget" name="commWidget" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>120</y>
+      <y>80</y>
       <width>601</width>
-      <height>281</height>
+      <height>321</height>
      </rect>
     </property>
     <widget class="QWidget" name="horizontalLayoutWidget_3">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>0</y>
+       <y>40</y>
        <width>601</width>
        <height>281</height>
       </rect>
@@ -88,10 +41,17 @@
            <x>0</x>
            <y>0</y>
            <width>291</width>
-           <height>281</height>
+           <height>271</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="clientLayout">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Client</string>
+            </property>
+           </widget>
+          </item>
           <item>
            <layout class="QHBoxLayout" name="portLayoutClient">
             <item>
@@ -146,9 +106,13 @@
           </item>
          </layout>
         </widget>
-        <zorder>serverWidget</zorder>
-        <zorder>verticalLayoutWidget_2</zorder>
-        <zorder>verticalLayoutWidget_2</zorder>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
        </widget>
       </item>
       <item>
@@ -156,13 +120,20 @@
         <widget class="QWidget" name="verticalLayoutWidget_3">
          <property name="geometry">
           <rect>
-           <x>-1</x>
-           <y>-1</y>
-           <width>301</width>
-           <height>281</height>
+           <x>0</x>
+           <y>0</y>
+           <width>281</width>
+           <height>271</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="serverLayout">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Server</string>
+            </property>
+           </widget>
+          </item>
           <item>
            <layout class="QHBoxLayout" name="portLayoutServer">
             <item>
@@ -193,10 +164,106 @@
       </item>
      </layout>
     </widget>
+    <widget class="Line" name="line_2">
+     <property name="geometry">
+      <rect>
+       <x>-3</x>
+       <y>20</y>
+       <width>601</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
    </widget>
-   <zorder>configWidget</zorder>
-   <zorder>verticalLayoutWidget_2</zorder>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>601</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="topLayout">
+     <item>
+      <widget class="QWidget" name="configWidget" native="true">
+       <widget class="QWidget" name="verticalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>181</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="configLayout">
+         <item>
+          <layout class="QFormLayout" name="protocolLayout">
+           <item row="1" column="0">
+            <widget class="QLabel" name="protocolLabel">
+             <property name="text">
+              <string>Protocol:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QRadioButton" name="udpSelect">
+             <property name="text">
+              <string>UDP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QRadioButton" name="tcpSelect">
+             <property name="text">
+              <string>TCP</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="buttonsWidget" native="true">
+       <widget class="QWidget" name="verticalLayoutWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>0</y>
+          <width>121</width>
+          <height>89</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QPushButton" name="aboutButton">
+           <property name="text">
+            <string>About</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="helpButton">
+           <property name="text">
+            <string>Help</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
    <zorder>commWidget</zorder>
+   <zorder>horizontalLayoutWidget</zorder>
+   <zorder>verticalLayoutWidget_4</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

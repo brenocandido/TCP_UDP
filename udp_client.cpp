@@ -21,7 +21,7 @@ void UDP_Client::start()
     qDebug() << "Local Port: " << _port;
     qDebug() << "Sending Port: " << _sending_port;
     qDebug() << "Sending Address" << _sending_address.toString() << "\n";
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(20));
 
     do
     {

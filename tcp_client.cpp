@@ -9,6 +9,15 @@ TCP_Client::TCP_Client(quint16 destination_port, QHostAddress destination_ip, QS
 
 void TCP_Client::start()
 {
+    QByteArray data;
+    data.append(_message);
+
+    if(data.size() > 8192)
+    {
+        qDebug() << "File too big!";
+        return;
+    }
+
     qDebug() << "Starting client";
     qDebug() << "Receiver IP: " << _destination_ip;
     qDebug() << "Receiver port: " << _destination_port << endl;
@@ -16,8 +25,6 @@ void TCP_Client::start()
 
     if(_socket.waitForConnected())
     {
-        QByteArray data;
-        data.append(_message);
         _socket.write(data);
         _socket.waitForBytesWritten();
         _socket.flush();
