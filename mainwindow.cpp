@@ -137,3 +137,4 @@ void MainWindow::on_helpButton_clicked()
     msgBox.setButtonText(QMessageBox::Ok, "Thanks! That's very helpful!");
     msgBox.exec();
 }
+

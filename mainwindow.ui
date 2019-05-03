@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>UDP/TCP COM</string>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="screen">
    <widget class="QWidget" name="commWidget" native="true">
@@ -164,19 +164,6 @@
       </item>
      </layout>
     </widget>
-    <widget class="Line" name="line_2">
-     <property name="geometry">
-      <rect>
-       <x>-3</x>
-       <y>20</y>
-       <width>601</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
@@ -194,7 +181,7 @@
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>20</y>
+          <y>0</y>
           <width>181</width>
           <height>71</height>
          </rect>
